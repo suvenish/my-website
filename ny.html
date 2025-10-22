@@ -184,7 +184,7 @@ Mugs and Hugs12(4.5ml)</h2>
 <br>
 <br>
 <div class="owt">
-<center><form action="add.html"><input id="cart" type="submit" value="Add to Cart"></form></center>
+<center><form id="cartForm"><input id="cart" type="submit" value="Add to Cart"></form></center>
 </div>
 </div>
 </div>
@@ -248,7 +248,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Super Stay Matte Ink....</div>
 <h1>    &#8377;434<h1> 
 <h2>    <del><span style="color:grey;">&#8377;699</span></del> <span style="color:green;">38% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart(' Maybeline New York Super Stay Matte Ink', './images/ex.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="pops">
@@ -258,7 +258,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Lipcolor-13 Magenta...</div>
 <h1>    &#8377;212<h1> 
 <h2>    <del><span style="color:grey;">&#8377;249</span></del> <span style="color:green;">15% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart(' SUGAR POP Matte', './images/new.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="vki">
@@ -268,7 +268,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Viny | InkA Liquid Lipstick,...</div>
 <h1>    &#8377;654<h1> 
 <h2>    <del><span style="color:grey;">&#8377;849</span></del> <span style="color:green;">23% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart('Maybeline Super Stay ', './images/old.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="pills">
@@ -278,7 +278,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Liquid Lip Colour,Wine....</div>
 <h1>    &#8377;314<h1> 
 <h2>    <del><span style="color:grey;">&#8377;349</span></del> <span style="color:green;">10% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart('Lakeme Forever Matte', './images/lod.png')">Add to Cart</button>
 </pre>
 </div>
 </div>
@@ -294,7 +294,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Souffle Matte Lipstick fo..</div>
 <h1>    &#8377;359<h1> 
 <h2>    <del><span style="color:grey;">&#8377;499</span></del> <span style="color:green;">28% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart(' Blue Heaven Cookie & Souffle Matte Lipstick fo', './images/wn.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="matte">
@@ -304,18 +304,18 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Weightless Matte Lipstic...</div>
 <h1>    &#8377;260<h1> 
 <h2>    <del><span style="color:grey;">&#8377;325</span></del> <span style="color:green;">20% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart(' FACES CANADA Weightless Matte Lipstic', './dar/mam.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="sound">
-<pre>
-<img src="./images/mam.png"width=300px height=300px><br>
-<div class="denm">    Mamaearth Moisture
-    Matte Longstay Lipstick....</div>
-<h1>    &#8377;409<h1> 
-<h2>    <del><span style="color:grey;">&#8377;499</span></del> <span style="color:green;">18% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
-</pre>
+  <pre>
+  <img src="./images/mam.png" width=300 height=300><br>
+  <div class="denm">Mamaearth Moisture Matte 
+Longstay Lipstick....</div>
+  <h1>&#8377;409</h1> 
+  <h2><del><span style="color:grey;">&#8377;499</span></del> <span style="color:green;">18% off</span></h2>
+<button id="ex" onclick="addToCart('Mamaearth Moisture Matte Longstay Lipstick', './images/mam.png')">Add to Cart</button>
+  </pre>
 </div>
 <div class="bulk">
 <pre>
@@ -324,12 +324,28 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Bullet Lipstick Set of 12...</div>
 <h1>    &#8377;199<h1> 
 <h2>    <del><span style="color:grey;">&#8377;499</span></del> <span style="color:green;">60% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart(' Ronzille Super Matte Mini Bullet Lipstick Set of 12', './images/buy.png')">Add to Cart</button>
 </pre>
 </div>
 </div>
 </div>
 </div>
+
+<script>
+function addToCart(name, image) {
+  // Get existing cart or empty array
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Add new item to cart
+  cart.push({ name, image });
+
+  // Save back to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Notify user - you can use alert or custom popup
+  alert(name + " added to cart!");
+}
+</script>
 </body>
 </html>
 

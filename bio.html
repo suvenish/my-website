@@ -249,7 +249,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Pure Rose Water(50ml)....</div>
 <h1>    &#8377;315<h1> 
 <h2>    <del><span style="color:grey;">&#8377;399</span></del> <span style="color:green;">21% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart('Alps Goodness 100% Pure Rose Water(50ml)', './images/alps.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="pops">
@@ -259,7 +259,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Toner(50ml) | Korean...</div>
 <h1>    &#8377;440<h1> 
 <h2>    <del><span style="color:grey;">&#8377;629</span></del> <span style="color:green;">30% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart(' Round Lab 1025 DOKDO', './images/lan.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="vki">
@@ -269,7 +269,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Steam Distilled Rose,...</div>
 <h1>    &#8377;315<h1> 
 <h2>    <del><span style="color:grey;">&#8377;450</span></del> <span style="color:green;">30% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart('TNW-The Natural Wash', './images/tnw.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="pills">
@@ -279,7 +279,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Pore Tightening...</div>
 <h1>    &#8377;175<h1> 
 <h2>    <del><span style="color:grey;">&#8377;210</span></del> <span style="color:green;">17% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart(' Biotique Honey Water', './images/hone.png')">Add to Cart</button>
 </pre>
 </div>
 </div>
@@ -295,7 +295,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Fermented Rice Water...</div>
 <h1>    &#8377;169<h1> 
 <h2>    <del><span style="color:grey;">&#8377;199</span></del> <span style="color:green;">15% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart('Alps Goodness Fermented Rice Water', './images/fer.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="matte">
@@ -305,7 +305,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Fine Vitamin C Brightin...</div>
 <h1>    &#8377;404<h1> 
 <h2>    <del><span style="color:grey;">&#8377;499</span></del> <span style="color:green;">10% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart('Quench Botanics Yuzu ', './images/que.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="sound">
@@ -315,7 +315,7 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Liquorice Niacinamide....</div>
 <h1>    &#8377;164<h1> 
 <h2>    <del><span style="color:grey;">&#8377;235</span></del> <span style="color:green;">30% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart('Alps Goodness Rice,', './images/go.png')">Add to Cart</button>
 </pre>
 </div>
 <div class="bulk">
@@ -325,12 +325,28 @@ top brands its awesome fast delivery all products r well packed it's really nice
     Rose Water Alcohol-Free...</div>
 <h1>    &#8377;214<h1> 
 <h2>    <del><span style="color:grey;">&#8377;225</span></del> <span style="color:green;">5% off</span></h2>
-<input id="ex" type="submit" value="Add to Cart">
+<button id="ex" onclick="addToCart('Plum Bulgarian Valley', './images/goo.png')">Add to Cart</button>
 </pre>
 </div>
 </div>
 </div>
 </div>
+
+<script>
+function addToCart(name, image) {
+  // Get existing cart or empty array
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Add new item to cart
+  cart.push({ name, image });
+
+  // Save back to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Notify user - you can use alert or custom popup
+  alert(name + " added to cart!");
+}
+</script>
 </body>
 </html>
 
